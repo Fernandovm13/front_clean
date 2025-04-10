@@ -5,14 +5,18 @@ import { CalendarDays } from "lucide-react";
 
 type Props = {
   viewModel: TaskFormViewModel;
+  onTaskCreated?: () => void;
 };
 
-export const TaskForm = observer(({ viewModel }: Props) => {
+export const TaskForm = observer(({ viewModel, onTaskCreated }: Props) => {
   useEffect(() => {
     if (viewModel.isCreated) {
       console.log("Tarea creada exitosamente");
+      if (onTaskCreated) {
+        onTaskCreated();
+      }
     }
-  }, [viewModel.isCreated]);
+  }, [viewModel.isCreated, onTaskCreated]);
 
   return (
     <div className="bg-[#0D0D0D] border border-zinc-700 rounded-2xl overflow-hidden shadow-md w-full max-w-xl">
