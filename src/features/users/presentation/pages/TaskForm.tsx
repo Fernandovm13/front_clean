@@ -20,7 +20,6 @@ export const TaskForm = observer(({ viewModel, onTaskCreated }: Props) => {
 
   return (
     <div className="bg-[#0D0D0D] border border-zinc-700 rounded-2xl overflow-hidden shadow-md w-full max-w-xl">
-      {/* Encabezado */}
       <div className="bg-gradient-to-r from-blue-800 to-indigo-900 px-6 py-4">
         <h2 className="text-white text-xl font-semibold flex items-center gap-2">
           <CalendarDays size={20} />
@@ -28,7 +27,6 @@ export const TaskForm = observer(({ viewModel, onTaskCreated }: Props) => {
         </h2>
       </div>
 
-      {/* Formulario */}
       <div className="p-6 space-y-4">
         {viewModel.error && (
           <p className="text-red-400 text-sm text-center">{viewModel.error}</p>

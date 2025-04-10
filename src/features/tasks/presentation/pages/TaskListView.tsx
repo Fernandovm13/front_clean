@@ -15,7 +15,6 @@ export const TaskListView = observer(({ viewModel }: Props) => {
 
   return (
     <div className="bg-[#0D0D0D] border border-zinc-700 rounded-2xl overflow-hidden shadow-md w-full max-w-xl">
-      {/* Encabezado */}
       <div className="bg-gradient-to-r from-blue-800 to-indigo-900 px-6 py-4">
         <h2 className="text-white text-xl font-semibold flex items-center gap-2">
           <ClipboardList size={20} className="text-white" />
@@ -23,9 +22,7 @@ export const TaskListView = observer(({ viewModel }: Props) => {
         </h2>
       </div>
 
-      {/* Contenido */}
       <div className="p-6 space-y-4">
-        {/* Barra de búsqueda */}
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-5 w-5 text-zinc-400" />
@@ -39,7 +36,6 @@ export const TaskListView = observer(({ viewModel }: Props) => {
           />
         </div>
 
-        {/* Filtros */}
         <div className="flex rounded-md overflow-hidden border border-zinc-700">
           <button
             className={`flex-1 px-3 py-2 text-sm font-medium ${viewModel.filterStatus === 'todas' ? 'bg-blue-600 text-white' : 'bg-zinc-900 text-zinc-300'}`}
@@ -61,12 +57,10 @@ export const TaskListView = observer(({ viewModel }: Props) => {
           </button>
         </div>
 
-        {/* Error */}
         {viewModel.error && (
           <p className="text-red-400 text-sm text-center">{viewModel.error}</p>
         )}
 
-        {/* Listado de tareas */}
         <div className="mt-4">
           {viewModel.filteredTaskList.length === 0 ? (
             <p className="text-zinc-400 text-center py-4">
